@@ -28,7 +28,7 @@ source build/envsetup.sh && \
 lunch rising_tissot-userdebug ;\
 
 croot ;\
-m -jX ; \
+m ascend ; \
 # echo "Date and time:" ; \
 
 # Print out/build_date.txt
