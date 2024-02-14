@@ -25,7 +25,7 @@ repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags && \
 source build/envsetup.sh && \
 
 # Lunch configuration
-riseup rising_tissot userdebug ;\
+riseup tissot userdebug ;\
 
 croot ;\
 ascend ; \
