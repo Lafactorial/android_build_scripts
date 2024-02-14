@@ -9,10 +9,10 @@ set -e
 # Remove existing local_manifests
 crave run --no-patch -- "rm -rf .repo/local_manifests && \
 # Initialize repo with specified manifest
-repo init -u https://github.com/alphadroid-project/manifest -b alpha-14 --git-lfs ;\
+repo init -u https://github.com/RisingTechOSS/android -b fourteen --git-lfs ;\
 
 # Clone local_manifests repository
-git clone https://github.com/Lafactorial/local_manifest --depth 1 -b Alpha-14 .repo/local_manifests ;\
+git clone https://github.com/Lafactorial/local_manifest --depth 1 -b rising-14 .repo/local_manifests ;\
 
 # Removals
 #rm -rf prebuilts/clang/host/linux-x86 external/chromium-webview && \
@@ -25,10 +25,10 @@ repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags && \
 source build/envsetup.sh && \
 
 # Lunch configuration
-lunch lineage_tissot-userdebug ;\
+lunch rising_tissot-userdebug ;\
 
 croot ;\
-make bacon ; \
+m -jX ; \
 # echo "Date and time:" ; \
 
 # Print out/build_date.txt
