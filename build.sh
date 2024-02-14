@@ -15,7 +15,7 @@ repo init -u https://github.com/RisingTechOSS/android -b fourteen --git-lfs ;\
 git clone https://github.com/Lafactorial/local_manifest --depth 1 -b rising-14 .repo/local_manifests ;\
 
 # Removals
-rm -rf prebuilts/clang/host/linux-x86 external/chromium-webview && \
+rm -rf prebuilts/clang/host/linux-x86/clang-latest && \
 
 # Sync the repositories
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags && \ 
