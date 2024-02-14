@@ -25,10 +25,10 @@ repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags && \
 source build/envsetup.sh && \
 
 # Lunch configuration
-lunch rising_tissot-userdebug ;\
+riseup tissot userdebug ;\
 
 croot ;\
-mka bacon ; \
+m -jX ; \
 # echo "Date and time:" ; \
 
 # Print out/build_date.txt
