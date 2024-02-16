@@ -3,13 +3,13 @@
 set -e
 
 # Initialize repo with specified manifest
- repo init -u https://github.com/crdroidandroid/android.git -b 14.0 --git-lfs
+ repo init -u https://github.com/crdroidandroid/android.git -b 14.0 --git-lfs --depth=1
 
 # Run inside foss.crave.io devspace, in the project folder
 # Remove existing local_manifests
 crave run --no-patch -- "rm -rf .repo/local_manifests && \
 # Initialize repo with specified manifest
-repo init -u https://github.com/crdroidandroid/android.git -b 14.0 --git-lfs ;\
+repo init -u https://github.com/crdroidandroid/android.git -b 14.0 --git-lfs --depth=1 ;\
 
 # Clone local_manifests repository
 git clone https://github.com/Lafactorial/local_manifest --depth 1 -b cr-14 .repo/local_manifests ;\
