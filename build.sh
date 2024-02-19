@@ -12,7 +12,7 @@ crave run --no-patch -- "rm -rf .repo/local_manifests && \
 repo init -u https://github.com/RisingTechOSS/android -b fourteen --git-lfs --depth=1 ;\
 
 # Clone local_manifests repository
-git clone https://github.com/Lafactorial/local_manifest --depth 1 -b rising-14 .repo/local_manifests ;\
+git clone https://github.com/Lafactorial/local_manifest -b rising-14 .repo/local_manifests ;\
 
 # Removals
 rm -rf prebuilts/clang/host/linux-x86/clang-latest external/chromium-webview && \
