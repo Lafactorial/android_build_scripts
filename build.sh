@@ -3,7 +3,7 @@
 set -e
 
 # Initialize repo with specified manifest
- repo init -u https://github.com/crdroidandroid/android.git -b 14.0 --git-lfs --depth=1
+repo init -u https://github.com/LineageOS/android.git -b lineage-21.0 --git-lfs --depth=1
 
 # Run inside foss.crave.io devspace, in the project folder
 # Remove existing local_manifests
@@ -15,7 +15,7 @@ repo init -u https://github.com/RisingTechOSS/android -b fourteen --git-lfs --de
 git clone https://github.com/Lafactorial/local_manifest --depth 1 -b rising-14 .repo/local_manifests ;\
 
 # Removals
-rm -rf prebuilts/clang/host/linux-x86/clang-latest && \
+rm -rf prebuilts/clang/host/linux-x86/clang-latest external/chromium-webview && \
 
 # Sync the repositories
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags && \ 
