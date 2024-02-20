@@ -9,7 +9,7 @@ repo init -u https://github.com/LineageOS/android.git -b lineage-21.0 --git-lfs 
 # Remove existing local_manifests
 crave run --no-patch -- "rm -rf .repo/local_manifests && \
 # Initialize repo with specified manifest
-repo init -u https://github.com/Lafactorial/android -b fourteen --git-lfs --depth=1 ;\
+repo init -u https://github.com/RisingTechOSS/android -b fourteen --git-lfs --depth=1 ;\
 
 # Clone local_manifests repository
 git clone https://github.com/Lafactorial/local_manifest -b rising-14 .repo/local_manifests ;\
