@@ -9,10 +9,10 @@ repo init -u https://github.com/LineageOS/android.git -b lineage-21.0 --git-lfs 
 # Remove existing local_manifests
 crave run --no-patch -- "rm -rf .repo/local_manifests && \
 # Initialize repo with specified manifest
-repo init -u https://github.com/alphadroid-project/manifest -b alpha-14 --git-lfs --depth=1 ;\
+repo init -u https://github.com/bananadroid/android_manifest.git -b 14 --git-lfs --depth=1 ;\
 
 # Clone local_manifests repository
-git clone https://github.com/Lafactorial/local_manifest --depth 1 -b Alpha-14 .repo/local_manifests ;\
+git clone https://github.com/Lafactorial/local_manifest --depth 1 -b banana-14 .repo/local_manifests ;\
 
 # Removals
 rm -rf prebuilts/clang/host/linux-x86 external/chromium-webview && \
@@ -25,10 +25,10 @@ repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags && \
 source build/envsetup.sh && \
 
 # Lunch configuration
-lunch lineage_tissot-userdebug ;\
+lunch banana_tissot-userdebug ;\
 
 croot ;\
-make bacon ; \
+m banana ; \
 # echo "Date and time:" ; \
 
 # Print out/build_date.txt
