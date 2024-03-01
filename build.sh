@@ -18,7 +18,7 @@ git clone https://github.com/Lafactorial/local_manifest --depth 1 -b banana-14 .
 rm -rf prebuilts/clang/host/linux-x86 external/chromium-webview && \
 
 # Sync the repositories
-repo sync -c -j16 --force-sync --no-clone-bundle --no-tags && \ 
+repo sync -c -j\$(nproc --all) --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync && \ 
 
 
 # Set up build environment
