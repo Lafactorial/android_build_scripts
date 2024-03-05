@@ -7,22 +7,7 @@ repo init -u https://github.com/LineageOS/android.git -b lineage-21.0 --git-lfs 
 
 # Run inside foss.crave.io devspace, in the project folder
 # Remove existing local_manifests
-crave run --no-patch -- "rm -rf .repo/local_manifests && \
-# Initialize repo with specified manifest
-repo init -u https://github.com/LineageOS/android.git -b lineage-21.0 --git-lfs --depth=1 ;\
-
-# Clone local_manifests repository
-git clone https://github.com/Lafactorial/local_manifest --depth 1 -b los21 .repo/local_manifests ;\
-
-# Removals
-rm -rf device/xiaomi/tissot device/xiaomi/msm8953-common vendor/xiaomi/tissot vendor/xiaomi/msm8953-common kernel/xiaomi/msm8953 prebuilts/clang/host/linux-x86 external/chromium-webview && \
-
-# Sync the repositories
-repo sync -c -j\$(nproc --all) --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync && \ 
-
-
-# Set up build environment
-source build/envsetup.sh && \
+crave run --no-patch -- "source build/envsetup.sh && \
 
 # Lunch configuration
 lunch lineage_tissot-userdebug ;\
