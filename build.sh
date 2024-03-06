@@ -15,10 +15,10 @@ repo init -u https://github.com/crdroidandroid/android.git -b 14.0 --git-lfs --d
 git clone https://github.com/Lafactorial/local_manifest --depth 1 -b cr-14 .repo/local_manifests ;\
 
 # Removals
-rm -rf prebuilts/clang/host/linux-x86 device/xiaomi/msm8953-common && \
+rm -rf prebuilts/clang/host/linux-x86 && \
 
 # Sync the repositories
-repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags && \ 
+repo sync -c -j\$(nproc --all) --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync && \ 
 
 
 # Set up build environment
