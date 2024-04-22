@@ -14,18 +14,14 @@ repo init -u https://github.com/RisingTechOSS/android -b fourteen --git-lfs --de
 # Clone local_manifests repository
 git clone https://github.com/Lafactorial/local_manifest -b rising-14 .repo/local_manifests ;\
 
-# Removals
-rm -rf prebuilts/clang/host/linux-x86/clang-latest external/chromium-webview && \
-
 # Sync the repositories
-repo sync -c -j\$(nproc --all) --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync && \ 
+/opt/crave/resync.sh && \
 
 
 # Set up build environment
 source build/envsetup.sh && \
 
 # Lunch configuration
-opt_patch ;\
 riseup tissot userdebug ;\
 
 croot ;\
