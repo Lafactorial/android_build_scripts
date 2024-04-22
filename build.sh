@@ -25,7 +25,7 @@ source build/envsetup.sh && \
 riseup tissot userdebug ;\
 
 croot ;\
-ascend ; \
+rise b ; \
 # echo "Date and time:" ; \
 
 # Print out/build_date.txt
