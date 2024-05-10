@@ -12,7 +12,7 @@ crave run --no-patch -- "rm -rf .repo/local_manifests && \
 repo init -u https://github.com/crdroidandroid/android.git -b 14.0 --git-lfs --depth=1 ;\
 
 # Clone local_manifests repository
-git clone https://github.com/Lafactorial/local_manifest --depth 1 -b cr-14 .repo/local_manifests ;\
+git clone https://github.com/Lafactorial/local_manifest --depth 1 -b sweet2-alpha .repo/local_manifests ;\
 
 # Sync the repositories
 /opt/crave/resync.sh && \ 
@@ -22,10 +22,10 @@ git clone https://github.com/Lafactorial/local_manifest --depth 1 -b cr-14 .repo
 source build/envsetup.sh && \
 
 # Lunch configuration
-lunch lineage_tissot-userdebug ;\
+lunch lineage_sweet2-ap1a-userdebug ;\
 
 croot ;\
-mka bacon ; \
+make bacon ; \
 # echo "Date and time:" ; \
 
 # Print out/build_date.txt
