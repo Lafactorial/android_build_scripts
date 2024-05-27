@@ -16,6 +16,8 @@ git clone https://github.com/Lafactorial/local_manifest --depth 1 -b sweet2-alph
 
 # Sync the repositories
 /opt/crave/resync.sh && \ 
+git -C vendor/gms lfs fetch  ;\
+git -C vendor/gms lfs checkout  ;\
 
 
 # Set up build environment
