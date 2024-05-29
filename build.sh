@@ -16,18 +16,14 @@ git clone https://github.com/Lafactorial/local_manifest --depth 1 -b sweet2-alph
 
 # Sync the repositories
 /opt/crave/resync.sh && \ 
-git -C vendor/gms lfs fetch  ;\
-git -C vendor/gms lfs checkout  ;\
-
+cd vendor/gms && git lfs fetch && git lfs install && git lfs checkout && cd ../.. ;\
 
 # Set up build environment
 source build/envsetup.sh && \
 
 # Lunch configuration
-lunch lineage_sweet2-ap1a-userdebug ;\
-
 croot ;\
-make bacon ; \
+brunch sweet2 ; \
 # echo "Date and time:" ; \
 
 # Print out/build_date.txt
