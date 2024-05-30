@@ -18,6 +18,9 @@ git clone https://github.com/Lafactorial/local_manifest --depth 1 -b sweet2-alph
 /opt/crave/resync.sh && \ 
 repo forall -c 'git lfs install && git lfs pull && git lfs checkout' ;\
 
+# Signing
+curl https://raw.githubusercontent.com/sounddrill31/crave_aosp_builder/signing/scripts/signing-script.sh | bash; \
+
 # Set up build environment
 source build/envsetup.sh && \
 
@@ -33,20 +36,3 @@ make bacon ; \
 
 # Print SHA256
 # sha256sum out/target/product/*/*.zip"
-
-# Clean up
-# rm -rf tissot/*
-
-
-
-# Pull generated zip files
-# crave pull out/target/product/*/*.zip
-
-# Pull generated img files
-# crave pull out/target/product/*/*.img
-
-# Upload zips to Telegram
-# telegram-upload --to sdreleases tissot/*.zip
-
-#Upload to Github Releases
-#curl -sf https://raw.githubusercontent.com/Meghthedev/Releases/main/headless.sh | sh
