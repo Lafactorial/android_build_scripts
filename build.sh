@@ -18,9 +18,11 @@ git clone https://github.com/Lafactorial/local_manifest --depth 1 -b sweet2-alph
 /opt/crave/resync.sh && \ 
 
 # lfs stuff
-repo forall -c "git lfs install && git lfs pull && git lfs checkout" ;\
+cd vendor/gms && git lfs fetch && git lfs install && git lfs checkout && cd ../.. ;\
+cd external/chromium-webview/prebuilt/arm64 && git lfs fetch && git lfs install && git lfs checkout && cd ../.. ;\
 
 # Signing
+export SIGNING_PREFERENCE=true ;\
 curl https://raw.githubusercontent.com/sounddrill31/crave_aosp_builder/signing/scripts/signing-script.sh | bash ;\
 
 
