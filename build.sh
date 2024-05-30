@@ -9,26 +9,28 @@ repo init -u https://github.com/LineageOS/android.git -b lineage-21.0 --git-lfs 
 # Remove existing local_manifests
 crave run --no-patch -- "rm -rf .repo/local_manifests && \
 # Initialize repo with specified manifest
-repo init -u https://github.com/bananadroid/android_manifest.git -b 14 --git-lfs --depth=1 ;\
+repo init -u https://github.com/alphadroid-project/manifest -b alpha-14 --git-lfs --depth=1 ;\
 
 # Clone local_manifests repository
-git clone https://github.com/Lafactorial/local_manifest --depth 1 -b banana-14 .repo/local_manifests ;\
-
-# Removals
-rm -rf prebuilts/clang/host/linux-x86 external/chromium-webview && \
+git clone https://github.com/Lafactorial/local_manifest --depth 1 -b sweet2-alpha .repo/local_manifests ;\
 
 # Sync the repositories
-repo sync -c -j\$(nproc --all) --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync && \ 
+/opt/crave/resync.sh && \ 
+repo forall -c "git lfs install && git lfs pull && git lfs checkout" ;\
+
+# Signing
+export SIGNING_PREFERENCE=true ;\
+curl https://raw.githubusercontent.com/sounddrill31/crave_aosp_builder/signing/scripts/signing-script.sh | bash ;\
 
 
 # Set up build environment
 source build/envsetup.sh && \
 
 # Lunch configuration
-lunch banana_tissot-userdebug ;\
+lunch lineage_sweet2-ap1a-userdebug ;\
 
 croot ;\
-m banana ; \
+make bacon ; \
 # echo "Date and time:" ; \
 
 # Print out/build_date.txt
