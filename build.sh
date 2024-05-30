@@ -27,7 +27,7 @@ curl https://raw.githubusercontent.com/sounddrill31/crave_aosp_builder/signing/s
 
 
 # Set up build environment
-. build/envsetup.sh && \
+source build/envsetup.sh && \
 
 # Lunch configuration
 lunch lineage_sweet2-ap1a-userdebug ;\
