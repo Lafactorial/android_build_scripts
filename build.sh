@@ -16,7 +16,7 @@ git clone https://github.com/Lafactorial/local_manifest --depth 1 -b sweet2-alph
 
 # Sync the repositories
 /opt/crave/resync.sh && \ 
-repo forall -c "git lfs install && git lfs pull && git lfs checkout" ;\
+repo forall -c git lfs install && git lfs pull && git lfs checkout ;\
 
 # Signing
 export SIGNING_PREFERENCE=true ;\
