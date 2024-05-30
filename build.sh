@@ -18,8 +18,7 @@ git clone https://github.com/Lafactorial/local_manifest --depth 1 -b sweet2-alph
 /opt/crave/resync.sh && \ 
 
 # lfs stuff
-cd vendor/gms && git lfs fetch && git lfs install && git lfs checkout && cd ../.. ;\
-cd external/chromium-webview/prebuilt/arm64 && git lfs fetch && git lfs install && git lfs checkout && cd ../.. ;\
+repo forall -c "git lfs install && git lfs pull && git lfs checkout" ;\
 
 # Signing
 export SIGNING_PREFERENCE=true ;\
