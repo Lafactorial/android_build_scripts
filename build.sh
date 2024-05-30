@@ -15,12 +15,7 @@ repo init -u https://github.com/alphadroid-project/manifest -b alpha-14 --git-lf
 git clone https://github.com/Lafactorial/local_manifest --depth 1 -b sweet2-alpha .repo/local_manifests ;\
 
 # Sync the repositories
-/opt/crave/resync.sh && \ 
-
-
-# Signing
-export SIGNING_PREFERENCE=true ;\
-curl https://raw.githubusercontent.com/sounddrill31/crave_aosp_builder/signing/scripts/signing-script.sh | bash ;\
+/opt/crave/resync.sh && \
 
 
 # Set up build environment
