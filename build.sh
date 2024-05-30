@@ -17,9 +17,6 @@ git clone https://github.com/Lafactorial/local_manifest --depth 1 -b sweet2-alph
 # Sync the repositories
 /opt/crave/resync.sh && \ 
 
-# lfs stuff
-cd vendor/gms && git lfs fetch && git lfs install && git lfs checkout && cd ../.. ;\
-cd external/chromium-webview/prebuilt/arm64 && git lfs fetch && git lfs install && git lfs checkout && cd ../.. ;\
 
 # Signing
 export SIGNING_PREFERENCE=true ;\
@@ -33,6 +30,7 @@ source build/envsetup.sh && \
 lunch lineage_sweet2-ap1a-userdebug ;\
 
 croot ;\
+repo forall -c 'git lfs install && git lfs pull && git lfs checkout' ;\
 make bacon ; \
 # echo "Date and time:" ; \
 
