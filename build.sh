@@ -19,8 +19,6 @@ git clone https://github.com/Lafactorial/local_manifest --depth 1 -b sweet2-alph
 cd vendor/gms && git lfs fetch && git lfs install && git lfs checkout && cd ../.. ;\
 cd external/chromium-webview/prebuilt/arm64 && git lfs fetch && git lfs install && git lfs checkout && cd ../.. ;\
 
-source android_build_script/signed.sh
-
 # Set up build environment
 source build/envsetup.sh && \
 
