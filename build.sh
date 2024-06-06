@@ -14,11 +14,8 @@ repo init -u https://github.com/alphadroid-project/manifest -b alpha-14 --git-lf
 # Clone local_manifests repository
 git clone https://github.com/Lafactorial/local_manifest --depth 1 -b Alpha-14 .repo/local_manifests ;\
 
-# Removals
-rm -rf device/xiaomi/tissot vendor/lineage && \
-
 # Sync the repositories
-repo sync -c -j\$(nproc --all) --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync && \ 
+/opt/crave/resync.sh && \
 
 
 # Set up build environment
@@ -28,6 +25,7 @@ source build/envsetup.sh && \
 lunch lineage_tissot-userdebug ;\
 
 croot ;\
+repo forall -c 'git lfs install && git lfs pull && git lfs checkout' ;\
 make bacon ; \
 # echo "Date and time:" ; \
 
