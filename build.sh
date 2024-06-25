@@ -22,7 +22,7 @@ git clone https://github.com/Lafactorial/local_manifest --depth 1 -b sweet2-alph
 source build/envsetup.sh && \
 
 # Lunch configuration
-breakfast sweet2 ;\
+breakfast sweet2 userdebug ;\
 
 croot ;\
 repo forall -c 'git lfs install && git lfs pull && git lfs checkout' ;\
