@@ -9,10 +9,10 @@ repo init -u https://github.com/LineageOS/android.git -b lineage-21.0 --git-lfs 
 # Remove existing local_manifests
 crave run --no-patch -- "rm -rf .repo/local_manifests && \
 # Initialize repo with specified manifest
-repo init -u https://github.com/alphadroid-project/manifest -b alpha-14 --git-lfs --depth=1 ;\
+repo init -u https://github.com/crdroidandroid/android.git -b 14.0 --git-lfs --depth=1 ;\
 
 # Clone local_manifests repository
-git clone https://github.com/Lafactorial/local_manifest --depth 1 -b sweet2-alpha .repo/local_manifests ;\
+git clone https://github.com/Lafactorial/local_manifest --depth 1 -b sweet2-crdroid .repo/local_manifests ;\
 
 # Sync the repositories
 /opt/crave/resync.sh && \
@@ -22,11 +22,10 @@ git clone https://github.com/Lafactorial/local_manifest --depth 1 -b sweet2-alph
 source build/envsetup.sh && \
 
 # Lunch configuration
-breakfast sweet2 userdebug ;\
+brunch sweet2 ;\
 
 croot ;\
 repo forall -c 'git lfs install && git lfs pull && git lfs checkout' ;\
-make bacon ; \
 # echo "Date and time:" ; \
 
 # Print out/build_date.txt
