@@ -25,7 +25,7 @@ source build/envsetup.sh && \
 brunch sweet2 ;\
 
 croot ;\
-repo forall -c 'git lfs install && git lfs pull && git lfs checkout' ;\
+repo forall -c 'git lfs install && git lfs pull && git lfs checkout' ;\"
 # echo "Date and time:" ; \
 
 # Print out/build_date.txt
